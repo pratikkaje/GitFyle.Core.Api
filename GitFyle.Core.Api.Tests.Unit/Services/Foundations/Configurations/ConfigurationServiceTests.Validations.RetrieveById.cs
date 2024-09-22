@@ -24,7 +24,7 @@ namespace GitFyle.Core.Api.Tests.Unit.Services.Foundations.Configurations
 
             var invalidConfigurationException =
                 new InvalidConfigurationException(
-                    message: "Configuration is invalid. fix the errors and try again.");
+                    message: "Configuration is invalid, fix the errors and try again.");
 
             invalidConfigurationException.AddData(
                 key: nameof(Configuration.Id),
@@ -32,7 +32,7 @@ namespace GitFyle.Core.Api.Tests.Unit.Services.Foundations.Configurations
 
             var expectedConfigurationValidationException =
                 new ConfigurationValidationException(
-                    message: "Configuration validation error occurred, fix errors and try again.",
+                    message: "Configuration validation error occurred, fix the errors and try again.",
                     innerException: invalidConfigurationException);
 
             // when

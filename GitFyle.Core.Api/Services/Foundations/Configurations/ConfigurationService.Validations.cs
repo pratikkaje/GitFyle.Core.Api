@@ -103,6 +103,8 @@ namespace GitFyle.Core.Api.Services.Foundations.Configurations
                 Message = $"Text is not same as {secondName}"
             };
 
+        private static async ValueTask ValidateConfigurationIdAsync(Guid configurationId) =>
+            Validate((Rule: await IsInvalidAsync(configurationId), Parameter: nameof(Configuration.Id)));
         private static async ValueTask<dynamic> IsInvalidAsync(Guid id) => new
         {
             Condition = id == Guid.Empty,
